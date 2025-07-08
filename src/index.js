@@ -6,10 +6,11 @@ import App from './App';
 import ReportUser from './ReportUser';
 import ITReport from './ITReport';
 import InfoReport from './InfoReport';
-import Report from './Report';
+import Report from './pages/report/Report';
 import Home from './Home';
 import Setting from './Setting';
 import Profile from './Profile';
+import WorkInfo from './pages/report/WorkInfo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,10 +20,11 @@ root.render(
       <Route path="/ReportUser" element={<ReportUser />} />
       <Route path="/ITReport" element={<ITReport />} />
       <Route path="/InfoReport" element={<InfoReport />} />
-      <Route path="/Report" element={<Report />} />
+      <Route path="/pages/report/Report" element={<Report />} />
       <Route path="/Home" element={<Home />} />
       <Route path="/Setting" element={<Setting />} />
       <Route path="/Profile" element={<Profile />} />
+      <Route path="/pages/report/WorkInfo" element={<WorkInfo />} />
     </Routes>
   </BrowserRouter>
 );

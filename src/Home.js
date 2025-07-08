@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Header from './pages/header'; 
 
 
 function Home() {
@@ -16,6 +17,7 @@ function Home() {
 
   return (
     <div>
+      <Header />
     </div>
   );
 }

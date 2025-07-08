@@ -23,14 +23,13 @@ function ReportUser() {
   const validate = () => {
     let newErrors = {};
 
-    if (!form.NameDevice.trim()) newErrors.NameDevice = 'กรุณากรอกชื่ออุปกรณ์';
     if (!form.phone.trim()) newErrors.phone = 'กรุณากรอกเบอร์โทร';
     else if (!/^[0-9]+$/.test(form.phone)) newErrors.phone = 'ต้องเป็นตัวเลขเท่านั้น';
-    if (!form.IDAnydesk.trim()) newErrors.IDAnydesk = 'กรุณากรอกเลข ID';
+    else if (!form.IDAnydesk.trim()) newErrors.IDAnydesk = 'กรุณากรอกเลข ID';
     else if (!/^[0-9]+$/.test(form.IDAnydesk)) newErrors.IDAnydesk = 'ต้องเป็นตัวเลขเท่านั้น';
-    if (!form.NameUser.trim()) newErrors.NameUser = 'กรุณากรอกชื่อผู้แจ้ง';
-    if (!form.description.trim()) newErrors.description = 'กรุณาระบุรายละเอียด';
-    if (!form.type_repair) newErrors.type_repair = 'กรุณาเลือกประเภทงานซ่อม';
+    else if (!form.NameUser.trim()) newErrors.NameUser = 'กรุณากรอกชื่อผู้แจ้ง';
+    else if (!form.description.trim()) newErrors.description = 'กรุณาระบุรายละเอียด';
+    else if (!form.type_repair) newErrors.type_repair = 'กรุณาเลือกประเภทงานซ่อม';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -39,7 +38,7 @@ function ReportUser() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
-    
+
     const formData = new FormData();
     Object.entries(form).forEach(([key, value]) => {
       formData.append(key, value);
@@ -53,7 +52,7 @@ function ReportUser() {
 
       const data = await res.json();
       alert(data.message);
-      
+
     } catch (err) {
       alert('เกิดข้อผิดพลาด');
       console.error(err);
@@ -94,7 +93,6 @@ function ReportUser() {
 
             <label className="form-label">ชื่ออุปกรณ์</label>
             <input className="form-control mb-2" type="text" name="NameDevice" onChange={handleChange} />
-            {errors.NameDevice && <div className="text-danger">{errors.NameDevice}</div>}
 
             <label className="form-label">ความเร่งด่วน</label>
             <select className="form-select mb-2" name="Urgency" onChange={handleChange}>

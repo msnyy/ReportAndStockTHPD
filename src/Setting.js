@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Header from './pages/header'; 
 
 
 function Setting() {
   const [msg, setMsg] = useState('');
+  const navigate = useNavigate();
+
+//   useEffect(() => {
+//     fetch('http://localhost:3001/login')
+//       .then((res) => res.json())
+//       .then((data) => setMsg(data.message));
+//   }, []);
+
   
+
   return (
     <div>
-      <div className="d-flex justify-content-center mt-5 mb-3">
-        <img src="/LoGo-PNG-2500Pixel.png" alt="Logo" className='w-25'/>
-      </div>
+      <Header />
     </div>
   );
 }
