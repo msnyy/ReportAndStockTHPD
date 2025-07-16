@@ -26,8 +26,8 @@ function InfoReport() {
                   <label className="form-label">ค้นหาจาก</label>
                   <select className="form-select" name="type_repair">
                     <option value="">วันที่แจ้งซ่อม</option>
-                    <option value="hardware">วันที่ดำเนินการ</option>
-                    <option value="software">วันที่สำเร็จ</option>
+                    <option value="">วันที่ดำเนินการ</option>
+                    <option value="">วันที่สำเร็จ</option>
                   </select>
                 </div>
 
@@ -61,8 +61,8 @@ function InfoReport() {
                   <label className="form-label">สถานะ</label>
                   <select className="form-select" name="type_repair">
                     <option value="">สถานะ</option>
-                    <option value="hardware">วันที่ดำเนินการ</option>
-                    <option value="software">วันที่สำเร็จ</option>
+                    <option value="">วันที่ดำเนินการ</option>
+                    <option value="">วันที่สำเร็จ</option>
                   </select>
                 </div>
 
@@ -82,8 +82,8 @@ function InfoReport() {
             <label className="form-label">สถานะ</label>
             <select className="form-select" name="type_repair">
               <option value="">สถานะ</option>
-              <option value="hardware">วันที่ดำเนินการ</option>
-              <option value="software">วันที่สำเร็จ</option>
+              <option value="">วันที่ดำเนินการ</option>
+              <option value="">วันที่สำเร็จ</option>
             </select>
           </div>
 
@@ -92,7 +92,7 @@ function InfoReport() {
           </div>
         </div>
       </form>
-    </div>;
+    </div>
   };
 
   useEffect(() => {

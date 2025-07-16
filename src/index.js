@@ -11,6 +11,9 @@ import Home from './Home';
 import Setting from './Setting';
 import Profile from './Profile';
 import WorkInfo from './pages/report/WorkInfo';
+import Survey from './pages/report/survey';
+import DeviceReg from './pages/report/DeviceReg';
+import DeviceCount from './pages/report/DeviceCount';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,6 +28,9 @@ root.render(
       <Route path="/Setting" element={<Setting />} />
       <Route path="/Profile" element={<Profile />} />
       <Route path="/pages/report/WorkInfo" element={<WorkInfo />} />
+      <Route path="/pages/report/Survey" element={<Survey />} />
+      <Route path="/pages/report/DeviceReg" element={<DeviceReg />} />
+      <Route path="/pages/report/DeviceCount" element={<DeviceCount />} />
     </Routes>
   </BrowserRouter>
 );
