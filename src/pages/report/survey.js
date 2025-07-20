@@ -116,10 +116,10 @@ function Survey() {
                 <label className="form-label">ถึง</label>
                 <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} min={startDate || undefined} max={today} className="form-control flex-fill" />
               </div>
-              
-          <div className='ms-4 d-flex align-items-end'>
-            <button className='btn btn-success'>ค้นหา</button>
-          </div>
+
+              <div className='ms-4 d-flex align-items-end'>
+                <button className='btn btn-success'>ค้นหา</button>
+              </div>
             </div>
           </form>
 

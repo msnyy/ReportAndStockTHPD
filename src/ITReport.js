@@ -99,11 +99,11 @@ function ITReport() {
   };
 
 
-  useEffect(() => {
-    fetch('http://localhost:3001/ITReport')
-      .then((res) => res.json())
-      .then((data) => setMsg(data.message));
-  }, []);
+  // useEffect(() => {
+  //   fetch('http://localhost:3001/ITReport')
+  //     .then((res) => res.json())
+  //     .then((data) => setMsg(data.message));
+  // }, []);
 
   return (
     <div className='d-flex flex-column'>

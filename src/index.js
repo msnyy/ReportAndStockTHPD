@@ -14,6 +14,10 @@ import WorkInfo from './pages/report/WorkInfo';
 import Survey from './pages/report/survey';
 import DeviceReg from './pages/report/DeviceReg';
 import DeviceCount from './pages/report/DeviceCount';
+import RepairSum from './pages/report/RepairSum';
+import Stats from './pages/report/Stats';
+import Urgency from './pages/report/Urgency';
+import UserList from './pages/report/UserList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -31,6 +35,10 @@ root.render(
       <Route path="/pages/report/Survey" element={<Survey />} />
       <Route path="/pages/report/DeviceReg" element={<DeviceReg />} />
       <Route path="/pages/report/DeviceCount" element={<DeviceCount />} />
+      <Route path="/pages/report/RepairSum" element={<RepairSum />} />
+      <Route path="/pages/report/Stats" element={<Stats />} />
+      <Route path="/pages/report/Urgency" element={<Urgency />} />
+      <Route path="/pages/report/UserList" element={<UserList />} />
     </Routes>
   </BrowserRouter>
 );

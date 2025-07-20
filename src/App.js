@@ -9,11 +9,7 @@ function App() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  useEffect(() => {
-    fetch('http://localhost:3001/login')
-      .then((res) => res.json())
-      .then((data) => setMsg(data.message));
-  }, []);
+ 
 
   const handleLogin = () => {
     if (username === 'Home') {

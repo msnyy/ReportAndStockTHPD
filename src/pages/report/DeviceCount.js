@@ -47,8 +47,8 @@ function DeviceCount() {
                         <button className='btn btn-success'>ค้นหา</button>
                     </div>
 
-                    <div className='card mt-4'>
-                        กราฟ
+                    <div className='card mt-4 p-5'>
+                        
                     </div>
 
 

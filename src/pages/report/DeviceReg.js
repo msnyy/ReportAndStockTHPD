@@ -91,9 +91,9 @@ function DeviceReg() {
                                 <label className="form-label">สถานะอุปกรณ์</label>
                                 <select className="form-select mb-2 flex-fill" name="Urgency">
                                     <option value="">--</option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
+                                    <option value="">ทั้งหมด</option>
+                                    <option value="">ใช้งานปกติ</option>
+                                    <option value="">เลิกใช้งาน</option>
                                 </select>
                             </div>
 

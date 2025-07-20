@@ -7,11 +7,11 @@ function Report() {
   const [msg, setMsg] = useState('');
   const navigate = useNavigate();
 
-  useEffect(() => {
-    fetch('http://localhost:3001/Report')
-      .then((res) => res.json())
-      .then((data) => setMsg(data.message));
-  }, []);
+  // useEffect(() => {
+  //   fetch('http://localhost:3001/Report')
+  //     .then((res) => res.json())
+  //     .then((data) => setMsg(data.message));
+  // }, []);
 
 
 
@@ -94,7 +94,7 @@ function Report() {
         </div>
 
         <div className='d-flex flex-wrap justify-content-center'>
-          <div className="card col-lg-2 mt-4 mx-3" style={{ boxShadow: '0 4px 10px rgba(0,0,0,0.15)', borderRadius: '10px' }} onClick={() => navigate('/pages/report/')}>
+          <div className="card col-lg-2 mt-4 mx-3" style={{ boxShadow: '0 4px 10px rgba(0,0,0,0.15)', borderRadius: '10px' }} onClick={() => navigate('/pages/report/RepairSum')}>
             <div style={{ backgroundColor: '#BD0C0F', borderRadius: '10px 10px 0 0', height: '20px' }}></div>
             <div className='d-flex justify-content-center m-4'>
               <div className='d-flex flex-column'>
@@ -111,7 +111,7 @@ function Report() {
             </div>
           </div>
 
-          <div className="card col-lg-2 mt-4 mx-3" style={{ boxShadow: '0 4px 10px rgba(0,0,0,0.15)', borderRadius: '10px' }} onClick={() => navigate('/pages/report/')}>
+          <div className="card col-lg-2 mt-4 mx-3" style={{ boxShadow: '0 4px 10px rgba(0,0,0,0.15)', borderRadius: '10px' }} onClick={() => navigate('/pages/report/Stats')}>
             <div style={{ backgroundColor: '#BD0C0F', borderRadius: '10px 10px 0 0', height: '20px' }}></div>
             <div className='d-flex justify-content-center m-4'>
               <div className='d-flex flex-column'>
@@ -127,7 +127,7 @@ function Report() {
             </div>
           </div>
 
-          <div className="card col-lg-2 mt-4 mx-3" style={{ boxShadow: '0 4px 10px rgba(0,0,0,0.15)', borderRadius: '10px' }} onClick={() => navigate('/pages/report/')}>
+          <div className="card col-lg-2 mt-4 mx-3" style={{ boxShadow: '0 4px 10px rgba(0,0,0,0.15)', borderRadius: '10px' }} onClick={() => navigate('/pages/report/Urgency')}>
             <div style={{ backgroundColor: '#BD0C0F', borderRadius: '10px 10px 0 0', height: '20px' }}></div>
             <div className='d-flex justify-content-center m-4'>
               <div className='d-flex flex-column'>
@@ -145,7 +145,7 @@ function Report() {
             </div>
           </div>
 
-          <div className="card col-lg-2 mt-4 mx-3" style={{ boxShadow: '0 4px 10px rgba(0,0,0,0.15)', borderRadius: '10px' }} onClick={() => navigate('/pages/report/')}>
+          <div className="card col-lg-2 mt-4 mx-3" style={{ boxShadow: '0 4px 10px rgba(0,0,0,0.15)', borderRadius: '10px' }} onClick={() => navigate('/pages/report/UserList')}>
             <div style={{ backgroundColor: '#BD0C0F', borderRadius: '10px 10px 0 0', height: '20px' }}></div>
             <div className='d-flex justify-content-center m-4'>
               <div className='d-flex flex-column'>
