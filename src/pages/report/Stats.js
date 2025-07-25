@@ -32,6 +32,35 @@ function Stats() {
     const renderSearchBar = () => {
         if (searchType === 'ประเภทงานซ่อม') {
             return (
+                <div>
+                    <div className='d-flex mt-4'>
+                        <div style={{ width: '20%' }}>
+                            <label className="form-label">วันที่แจ้งซ่อม</label>
+                            <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} max={today} className="form-control flex-fill" />
+                        </div>
+
+                        <div style={{ marginLeft: '2%', width: '20%' }}>
+                            <label className="form-label">ถึง</label>
+                            <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} min={startDate || undefined} max={today} className="form-control flex-fill" />
+                        </div>
+
+                        <div className='d-flex align-items-end ms-3'>
+                            <button className='btn btn-success'>ค้นหา</button>
+                        </div>
+                    </div>
+
+                    <div className='card mt-4 p-5'></div>
+
+                    <div className='d-flex justify-content-around mt-4' style={{ backgroundColor: '#8B6D6D8A', height: '40px' }}>
+                        <p className='mt-2'>ลำดับ</p>
+                        <p className='mt-2'>ประเภทงานซ่อม</p>
+                        <p className='mt-2'>จำนวน</p>
+                        <p className='mt-2'>รายละเอียด</p>
+                    </div>
+                </div>
+            );
+        } else if (type === 'ประเภทปัญหา') {
+            return <div>
                 <div className='d-flex mt-4'>
                     <div style={{ width: '20%' }}>
                         <label className="form-label">วันที่แจ้งซ่อม</label>
@@ -47,41 +76,72 @@ function Stats() {
                         <button className='btn btn-success'>ค้นหา</button>
                     </div>
                 </div>
-            );
-        } else if (type === 'ประเภทปัญหา') {
-            return <div className='d-flex mt-4'>
-                <div style={{ width: '20%' }}>
-                    <label className="form-label">วันที่แจ้งซ่อม</label>
-                    <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} max={today} className="form-control flex-fill" />
-                </div>
 
-                <div style={{ marginLeft: '2%', width: '20%' }}>
-                    <label className="form-label">ถึง</label>
-                    <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} min={startDate || undefined} max={today} className="form-control flex-fill" />
-                </div>
+                <div className='card mt-4 p-5'></div>
 
-                <div className='d-flex align-items-end ms-3'>
-                    <button className='btn btn-success'>ค้นหา</button>
+                <div className='d-flex justify-content-around mt-4' style={{ backgroundColor: '#8B6D6D8A', height: '40px' }}>
+                    <p className='mt-2'>ลำดับ</p>
+                    <p className='mt-2'>ประเภทงานซ่อม</p>
+                    <p className='mt-2'>จำนวน</p>
+                    <p className='mt-2'>รายละเอียด</p>
                 </div>
             </div>;
         } else if (type === 'หมวดหมู่อุปกรณ์') {
-            return <div className='d-flex mt-4'>
-                <div style={{ width: '20%' }}>
-                    <label className="form-label">วันที่แจ้งซ่อม</label>
-                    <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} max={today} className="form-control flex-fill" />
+            return <div>
+                <div className='d-flex mt-4'>
+                    <div style={{ width: '20%' }}>
+                        <label className="form-label">วันที่แจ้งซ่อม</label>
+                        <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} max={today} className="form-control flex-fill" />
+                    </div>
+
+                    <div style={{ marginLeft: '2%', width: '20%' }}>
+                        <label className="form-label">ถึง</label>
+                        <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} min={startDate || undefined} max={today} className="form-control flex-fill" />
+                    </div>
+
+                    <div className='d-flex align-items-end ms-3'>
+                        <button className='btn btn-success'>ค้นหา</button>
+                    </div>
                 </div>
 
-                <div style={{ marginLeft: '2%', width: '20%' }}>
-                    <label className="form-label">ถึง</label>
-                    <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} min={startDate || undefined} max={today} className="form-control flex-fill" />
-                </div>
+                <div className='card mt-4 p-5'></div>
 
-                <div className='d-flex align-items-end ms-3'>
-                    <button className='btn btn-success'>ค้นหา</button>
+                <div className='d-flex justify-content-around mt-4' style={{ backgroundColor: '#8B6D6D8A', height: '40px' }}>
+                    <p className='mt-2'>ลำดับ</p>
+                    <p className='mt-2'>ประเภทปัญหา</p>
+                    <p className='mt-2'>จำนวน</p>
+                    <p className='mt-2'>รายละเอียด</p>
                 </div>
             </div>;
         } else if (type === 'หน่วยงาน / แผนก') {
-            return <div className='d-flex mt-4'>
+            return <div>
+                <div className='d-flex mt-4'>
+                    <div style={{ width: '20%' }}>
+                        <label className="form-label">วันที่แจ้งซ่อม</label>
+                        <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} max={today} className="form-control flex-fill" />
+                    </div>
+
+                    <div style={{ marginLeft: '2%', width: '20%' }}>
+                        <label className="form-label">ถึง</label>
+                        <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} min={startDate || undefined} max={today} className="form-control flex-fill" />
+                    </div>
+
+                    <div className='d-flex align-items-end ms-3'>
+                        <button className='btn btn-success'>ค้นหา</button>
+                    </div>
+                </div>
+
+                <div className='card mt-4 p-5'></div>
+
+                <div className='d-flex justify-content-around mt-4' style={{ backgroundColor: '#8B6D6D8A', height: '40px' }}>
+                    <p className='mt-2'>ลำดับ</p>
+                    <p className='mt-2'>หมวดหมู่อุปกรณ์</p>
+                    <p className='mt-2'>จำนวน</p>
+                    <p className='mt-2'>รายละเอียด</p>
+                </div>
+            </div>;
+        } return <div>
+            <div className='d-flex mt-4'>
                 <div style={{ width: '20%' }}>
                     <label className="form-label">วันที่แจ้งซ่อม</label>
                     <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} max={today} className="form-control flex-fill" />
@@ -92,40 +152,37 @@ function Stats() {
                     <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} min={startDate || undefined} max={today} className="form-control flex-fill" />
                 </div>
 
-                <div className='d-flex align-items-end ms-3'>
-                    <button className='btn btn-success'>ค้นหา</button>
-                </div>
-            </div>;
-        } return <div className='d-flex mt-4'>
-            <div style={{ width: '20%' }}>
-                <label className="form-label">วันที่แจ้งซ่อม</label>
-                <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} max={today} className="form-control flex-fill" />
-            </div>
-
-            <div style={{ marginLeft: '2%', width: '20%' }}>
-                <label className="form-label">ถึง</label>
-                <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} min={startDate || undefined} max={today} className="form-control flex-fill" />
-            </div>
-
-            <form>
-                <div className='d-flex flex-row'>
-                    <div className='ms-3'>
-                        <label className="form-label">หน่วยงาน / แผนก</label>
-                        <select className="form-select mb-2 flex-fill" name="Urgency">
-                            <option value="">--หน่วยงาน / แผนก--</option>
-                            {/* <option value="">ปกติ</option>
+                <form>
+                    <div className='d-flex flex-row'>
+                        <div className='ms-3'>
+                            <label className="form-label">หน่วยงาน / แผนก</label>
+                            <select className="form-select mb-2 flex-fill" name="Urgency">
+                                <option value="">--หน่วยงาน / แผนก--</option>
+                                {/* <option value="">ปกติ</option>
                                     <option value="ด่วน">ด่วน</option>
                                     <option value="ด่วนมาก">ด่วนมาก</option> */}
-                        </select>
-                    </div>
+                            </select>
+                        </div>
 
-                    <div className='ms-4' style={{marginTop:'11.5%'}}>
-                        <button className='btn btn-success'>ค้นหา</button>
-                    </div>
+                        <div className='ms-4' style={{ marginTop: '11.5%' }}>
+                            <button className='btn btn-success'>ค้นหา</button>
+                        </div>
 
+                    </div>
+                </form>
+            </div>
+            
+                <div className='card mt-4 p-5'></div>
+
+                <div className='d-flex justify-content-around mt-4' style={{ backgroundColor: '#8B6D6D8A', height: '40px' }}>
+                    <p className='mt-2'>ผู้ดำเนินการ</p>
+                    <p className='mt-2'>แจ้งซ่อม</p>
+                    <p className='mt-2'>รอตรวจสอบ</p>
+                    <p className='mt-2'>ดำเนินการ</p>
+                    <p className='mt-2'>ส่งซ่อม / เคลม</p>
+                    <p className='mt-2'>สำเร็จ</p>
+                    <p className='mt-2'>ยกเลิก</p>
                 </div>
-            </form>
-
         </div>;
     };
 
@@ -140,11 +197,11 @@ function Stats() {
                 </div>
 
                 <div className='mt-4'>
-                    <button className='btn btn-outline-secondary' onClick={() => { setType('ประเภทงานซ่อม'); setSearchType('ประเภทงานซ่อม'); }}>ประเภทงานซ่อม</button>
-                    <button className='btn btn-outline-secondary ms-3' onClick={() => { setType('ประเภทปัญหา'); setSearchType('ประเภทปัญหา'); }}>ประเภทปัญหา</button>
-                    <button className='btn btn-outline-secondary ms-3' onClick={() => { setType('หมวดหมู่อุปกรณ์'); setSearchType('หมวดหมู่อุปกรณ์'); }}>หมวดหมู่อุปกรณ์</button>
-                    <button className='btn btn-outline-secondary ms-3' onClick={() => { setType('หน่วยงาน / แผนก'); setSearchType('หน่วยงาน / แผนก'); }}>หน่วยงาน / แผนก</button>
-                    <button className='btn btn-outline-secondary ms-3' onClick={() => { setType('ผู้ดำเนินการ'); setSearchType('ผู้ดำเนินการ'); }}>ผู้ดำเนินการ</button>
+                    <button className='btn btn-outline-danger' onClick={() => { setType('ประเภทงานซ่อม'); setSearchType('ประเภทงานซ่อม'); }}>ประเภทงานซ่อม</button>
+                    <button className='btn btn-outline-danger ms-3' onClick={() => { setType('ประเภทปัญหา'); setSearchType('ประเภทปัญหา'); }}>ประเภทปัญหา</button>
+                    <button className='btn btn-outline-danger ms-3' onClick={() => { setType('หมวดหมู่อุปกรณ์'); setSearchType('หมวดหมู่อุปกรณ์'); }}>หมวดหมู่อุปกรณ์</button>
+                    <button className='btn btn-outline-danger ms-3' onClick={() => { setType('หน่วยงาน / แผนก'); setSearchType('หน่วยงาน / แผนก'); }}>หน่วยงาน / แผนก</button>
+                    <button className='btn btn-outline-danger ms-3' onClick={() => { setType('ผู้ดำเนินการ'); setSearchType('ผู้ดำเนินการ'); }}>ผู้ดำเนินการ</button>
                 </div>
 
                 <div>{renderSearchBar()}</div>

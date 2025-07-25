@@ -29,14 +29,14 @@ function Header() {
           </div>
 
           <div>
-            <button className='btn' style={{color:'white'}} onClick={() => navigate('/ITReport')}><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-display-fill" viewBox="0 0 20 20">
+            <button className='btn' style={{color:'white'}} onClick={() => navigate('/pages/device/ITReport')}><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-display-fill" viewBox="0 0 20 20">
             <path d="M6 12q0 1-.25 1.5H5a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-.75Q10 13 10 12h4c2 0 2-2 2-2V4c0-2-2-2-2-2H2C0 2 0 4 0 4v6c0 2 2 2 2 2z"/>
             </svg>อุปกรณ์</button>
           </div>
           
 
           <div>
-            <button className='btn' style={{color:'white'}} onClick={() => navigate('/InfoReport')}><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 20 20">
+            <button className='btn' style={{color:'white'}} onClick={() => navigate('/pages/job/InfoReport')}><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
             </svg>ข้อมูลงานซ่อม</button>
           </div>

@@ -163,9 +163,9 @@ function Survey() {
         <h4>ประเมินความพึงพอใจ</h4>
 
         <div className='mt-4'>
-          <button className='btn btn-outline-secondary' onClick={() => setSearchType('ประเมินความพึงพอใจ')}>ประเมินความพึงพอใจ</button>
-          <button className='btn btn-outline-secondary ms-3' onClick={() => setSearchType('สรุปผลการประเมิน')}>สรุปผลการประเมินความพึงพอใจ</button>
-          <button className='btn btn-outline-secondary ms-3' onClick={() => setSearchType('สรุปคะแนนเฉลี่ยรวม')}>สรุปคะแนนเฉลี่ยรวม</button>
+          <button className='btn btn-outline-danger' onClick={() => setSearchType('ประเมินความพึงพอใจ')}>ประเมินความพึงพอใจ</button>
+          <button className='btn btn-outline-danger ms-3' onClick={() => setSearchType('สรุปผลการประเมิน')}>สรุปผลการประเมินความพึงพอใจ</button>
+          <button className='btn btn-outline-danger ms-3' onClick={() => setSearchType('สรุปคะแนนเฉลี่ยรวม')}>สรุปคะแนนเฉลี่ยรวม</button>
         </div>
 
         <div style={{ marginTop: '10px' }}>{renderSearchBar()}</div>

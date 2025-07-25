@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import App from './App';
 import ReportUser from './ReportUser';
-import ITReport from './ITReport';
-import InfoReport from './InfoReport';
+import ITReport from './pages/device/ITReport';
+import InfoReport from './pages/job/InfoReport';
 import Report from './pages/report/Report';
 import Home from './Home';
 import Setting from './Setting';
@@ -18,6 +18,10 @@ import RepairSum from './pages/report/RepairSum';
 import Stats from './pages/report/Stats';
 import Urgency from './pages/report/Urgency';
 import UserList from './pages/report/UserList';
+import CreateJob from './pages/job/CreateJob';
+import EditJob from './pages/job/EditJob';
+import CreateDevice from './pages/device/CreateDevice';
+// import EditJob from './pages/job/EditJob';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,8 +29,8 @@ root.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/ReportUser" element={<ReportUser />} />
-      <Route path="/ITReport" element={<ITReport />} />
-      <Route path="/InfoReport" element={<InfoReport />} />
+      <Route path="/pages/device/ITReport" element={<ITReport />} />
+      <Route path="/pages/job/InfoReport" element={<InfoReport />} />
       <Route path="/pages/report/Report" element={<Report />} />
       <Route path="/Home" element={<Home />} />
       <Route path="/Setting" element={<Setting />} />
@@ -39,6 +43,10 @@ root.render(
       <Route path="/pages/report/Stats" element={<Stats />} />
       <Route path="/pages/report/Urgency" element={<Urgency />} />
       <Route path="/pages/report/UserList" element={<UserList />} />
+      <Route path="/pages/job/CreateJob" element={<CreateJob />} />
+      <Route path="/pages/job/EditJob" element={<EditJob />} />
+      <Route path="/pages/device/CreateDevice" element={<CreateDevice />} />
+      {/* <Route path="/pages/job/Edit" element={<EditJob />} /> */}
     </Routes>
   </BrowserRouter>
 );

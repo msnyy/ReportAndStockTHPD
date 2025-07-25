@@ -238,8 +238,8 @@ function WorkInfo() {
                 
                 <hr style={{ border: '3px solidrgb(71, 71, 71)', marginLeft: '1%', marginRight: '1%', marginTop: '2%' }} />
                 <div className='mt-4'>
-                    <button className='btn btn-outline-secondary' onClick={() => setSearchType('ข้อมูลการทำงาน')}>รายการข้อมูลการทำงาน</button>
-                    <button className='btn btn-outline-secondary ms-3' onClick={() => setSearchType('รายละเอียดค่าใช้จ่าย')}>รายละเอียดค่าใช้จ่าย</button>
+                    <button className='btn btn-outline-danger' onClick={() => setSearchType('ข้อมูลการทำงาน')}>รายการข้อมูลการทำงาน</button>
+                    <button className='btn btn-outline-danger ms-3' onClick={() => setSearchType('รายละเอียดค่าใช้จ่าย')}>รายละเอียดค่าใช้จ่าย</button>
                 </div>
 
                 <div className='d-flex justify-content-around mt-4' style={{ backgroundColor: '#8B6D6D8A', height: '40px' }}>

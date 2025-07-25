@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from './pages/header';
+import Header from '../header';
 
 function InfoReport() {
   const [msg, setMsg] = useState('');
@@ -111,7 +111,7 @@ function InfoReport() {
         </div>
         <div className='d-flex flex-column p-4'>
           <div className='d-flex justify-content-end'>
-            <button className='btn' style={{ backgroundColor: '#13730A', color: 'white' }}>+ เพิ่มข้อมูล</button>
+            <button className='btn' style={{ backgroundColor: '#13730A', color: 'white' }} onClick={() => navigate('/pages/job/CreateJob')}>+ เพิ่มข้อมูล</button>
           </div>
           <div className='d-flex flex-row'>
             <div className='mt-3'>

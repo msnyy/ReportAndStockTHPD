@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from './pages/header';
+import Header from '../header';
 
 function ITReport() {
   const [msg, setMsg] = useState('');
@@ -116,7 +116,7 @@ function ITReport() {
         </div>
         <div className='d-flex flex-column p-4'>
           <div className='d-flex justify-content-end'>
-            <button className='btn' style={{ backgroundColor: '#13730A', color: 'white' }}>+ เพิ่มอุปกรณ์</button>
+            <button className='btn' style={{ backgroundColor: '#13730A', color: 'white' }} onClick={() => navigate('/pages/device/CreateDevice')}>+ เพิ่มอุปกรณ์</button>
           </div>
         </div>
 
