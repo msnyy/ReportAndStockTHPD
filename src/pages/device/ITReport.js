@@ -4,7 +4,7 @@ import Header from '../header';
 
 function ITReport() {
   const [msg, setMsg] = useState('');
-  const [searchType, setSearchType] = useState('');
+  const [searchType, setSearchType] = useState('รหัสอุปกรณ์');
   const navigate = useNavigate();
 
   const renderSearchBar = () => {
@@ -24,16 +24,15 @@ function ITReport() {
               <div style={{ marginLeft: '1%' }}>
                 <select className="form-select">
                   <option value="">หน่วยงาน/แผนก</option>
-                  <option value="hr">HR</option>
-                  <option value="it">IT</option>
                 </select>
               </div>
 
               <div style={{ marginLeft: '1%' }}>
                 <select className="form-select">
                   <option value="">สถานะอุปกรณ์</option>
-                  <option value="active">ใช้งานอยู่</option>
-                  <option value="repair">ส่งซ่อม</option>
+                  <option value="">ทั้งหมด</option>
+                  <option value="active">ใช้งานปกติ</option>
+                  <option value="repair">เลิกใช้งาน</option>
                 </select>
               </div>
 
@@ -46,7 +45,7 @@ function ITReport() {
       );
     }
 
-    if (searchType === 'รหัสอุปกรณ์') {
+    else if (searchType === 'รหัสอุปกรณ์') {
       return (
         <div className='m-4'>
           <form>
@@ -54,16 +53,36 @@ function ITReport() {
               <div>
                 <select className="form-select">
                   <option value="">ชื่ออุปกรณ์</option>
-                  <option value="pc1">PC-1</option>
-                  <option value="printer1">Printer-1</option>
                 </select>
               </div>
 
               <div style={{ marginLeft: '1%' }}>
                 <select className="form-select">
                   <option value="">สถานะ</option>
-                  <option value="working">ปกติ</option>
-                  <option value="broken">เสีย</option>
+                  <option value="working">ทั้งหมด</option>
+                  <option value="working">ใช้งานปกติ</option>
+                  <option value="broken">เลิกใช้งาน</option>
+                </select>
+              </div>
+
+              <div>
+                <button className='btn btn-success ms-3'>ค้นหา</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      );
+    }
+
+    else if (searchType === 'ประเภทอุปกรณ์') {
+      return (
+        <div className='m-4'>
+          <form>
+            <div className='d-flex'>
+
+              <div>
+                <select className="form-select">
+                  <option value="">ประเภทอุปกรณ์</option>
                 </select>
               </div>
 
@@ -81,16 +100,13 @@ function ITReport() {
         <form>
           <div className='d-flex'>
             <div>
-              <label className="form-label">สถานะ</label>
               <select className="form-select">
-                <option value="">สถานะ</option>
-                <option value="pending">รอตรวจสอบ</option>
-                <option value="done">เสร็จสิ้น</option>
+                <option value="">ชื่อผู้ใช้งาน</option>
               </select>
             </div>
 
             <div>
-              <button className='btn btn-success ms-3' style={{ marginTop: '40%' }}>ค้นหา</button>
+              <button className='btn btn-success ms-3'>ค้นหา</button>
             </div>
           </div>
         </form>

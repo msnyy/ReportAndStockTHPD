@@ -37,7 +37,7 @@ function Survey() {
               </div>
 
               <div style={{ marginLeft: '2%', width: '20%' }}>
-                <label className="form-label">วันที่แจ้งซ่อม</label>
+                <label className="form-label">วันที่เริ่มต้น</label>
                 <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} max={today} className="form-control flex-fill" />
               </div>
 
@@ -49,9 +49,6 @@ function Survey() {
               <div style={{ marginLeft: '2%', width: '20%' }}>
                 <label className="form-label">ชื่อผู้แจ้ง</label>
                 <select className="form-select flex-fill" name="type_repair">
-                  <option value="">วันที่แจ้งซ่อม</option>
-                  <option value="">วันที่ดำเนินการ</option>
-                  <option value="">วันที่สำเร็จ</option>
                 </select>
               </div>
             </div>
@@ -61,15 +58,8 @@ function Survey() {
             <form>
               <div className='d-flex flex-row'>
                 <div style={{ width: '20%' }}>
-                  <label className="form-label">สถานะ</label>
+                  <label className="form-label">ผู้ดำเนินการ</label>
                   <select className="form-select flex-fill" name="Urgency" onChange={handleChange}>
-                    <option value="">--สถานะ--</option>
-                    <option value="">แจ้งซ่อม</option>
-                    <option value="">รอตรวจสอบ</option>
-                    <option value="">ส่งซ่อม/เคลม</option>
-                    <option value="">ยกเลิก</option>
-                    <option value="">สำเร็จ</option>
-                    <option value="">ยังไม่ได้ประเมินความพึงพอใจ</option>
                   </select>
                 </div>
 
@@ -102,7 +92,6 @@ function Survey() {
                 <label className="form-label">ค้นหาจาก</label>
                 <select className="form-select flex-fill" name="type_repair">
                   <option value="">วันที่แจ้งซ่อม</option>
-                  <option value="">วันที่ดำเนินการ</option>
                   <option value="">วันที่สำเร็จ</option>
                 </select>
               </div>

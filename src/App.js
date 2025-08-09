@@ -13,7 +13,7 @@ function App() {
 
   const handleLogin = () => {
     if (username === 'Home') {
-      navigate('/Home');
+      navigate('/pages/Home');
     } else {
       navigate('/ReportUser');
     }

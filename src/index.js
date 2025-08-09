@@ -7,7 +7,7 @@ import ReportUser from './ReportUser';
 import ITReport from './pages/device/ITReport';
 import InfoReport from './pages/job/InfoReport';
 import Report from './pages/report/Report';
-import Home from './Home';
+import Home from './pages/Home';
 import Setting from './Setting';
 import Profile from './Profile';
 import WorkInfo from './pages/report/WorkInfo';
@@ -32,7 +32,7 @@ root.render(
       <Route path="/pages/device/ITReport" element={<ITReport />} />
       <Route path="/pages/job/InfoReport" element={<InfoReport />} />
       <Route path="/pages/report/Report" element={<Report />} />
-      <Route path="/Home" element={<Home />} />
+      <Route path="/pages/Home" element={<Home />} />
       <Route path="/Setting" element={<Setting />} />
       <Route path="/Profile" element={<Profile />} />
       <Route path="/pages/report/WorkInfo" element={<WorkInfo />} />
