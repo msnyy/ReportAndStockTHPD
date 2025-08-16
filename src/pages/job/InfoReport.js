@@ -14,7 +14,11 @@ function InfoReport() {
   const handleChange = (e) => {
     setStartDate(e.target.value);
   };
-// ข้อมูลทดลอง
+
+
+  const [showModal, setShowModal] = useState(false);
+  const [selectedRow, setSelectedRow] = useState(null);
+  // ข้อมูลทดลอง
   useEffect(() => {
     const fakeData = [
       {
@@ -48,16 +52,35 @@ function InfoReport() {
     'ส่งซ่อม/เคลม': 0,
     'สำเร็จ': 0,
     'ยกเลิก': 0
-});
+  });
 
-const statusColors = {
-  'แจ้งซ่อม': '#FF3806',
-  'รอตรวจสอบ': '#0AA1FF',
-  'ดำเนินการ': '#1700E5',
-  'ส่งซ่อม/เคลม': '#480065',
-  'สำเร็จ': '#007308',
-  'ยกเลิก': '#F80C0C'
-};
+  const statusColors = {
+    'แจ้งซ่อม': '#FF3806',
+    'รอตรวจสอบ': '#0AA1FF',
+    'ดำเนินการ': '#1700E5',
+    'ส่งซ่อม/เคลม': '#480065',
+    'สำเร็จ': '#007308',
+    'ยกเลิก': '#F80C0C'
+  };
+
+
+  const handleOpenDetail = (row) => {
+    setSelectedRow(row);
+    setShowModal(true);
+  };
+
+  const handleCloseDetail = () => {
+    setShowModal(false);
+    setSelectedRow(null);
+  };
+
+  const handleDelete = (id) => {
+    if (window.confirm("คุณต้องการลบข้อมูลนี้ใช่หรือไม่?")) {
+      setMsg(prevMsg => prevMsg.filter(row => row.id !== id));
+      setShowModal(false); 
+      setSelectedRow(null);
+    }
+  };
 
   const renderSearchBar = () => {
     if (searchType === 'วันที่แจ้งซ่อม') {
@@ -221,16 +244,16 @@ const statusColors = {
               <p>สถานะงานที่ค้างอยู่ :</p>
             </div>
             <div className='d-flex justify-content-between ms-3'>
-                    {Object.keys(statusColors).map(status => (
-                        <div key={status} className='d-flex align-items-center m-2' style={{whiteSpace: 'nowrap'}}>
-                          <p className='mt-2'>{status}</p>
-                            <div className='d-flex justify-content-center ms-1' style={{ width: '20px', height: '20px', borderRadius: '50%', background: statusColors[status],alignItems: 'center', color: '#fff', margin: '0 auto'}}>
-                                {counts[status]}
-                            </div>
-                            
-                        </div>
-                    ))}
+              {Object.keys(statusColors).map(status => (
+                <div key={status} className='d-flex align-items-center m-2' style={{ whiteSpace: 'nowrap' }}>
+                  <p className='mt-2'>{status}</p>
+                  <div className='d-flex justify-content-center ms-1' style={{ width: '20px', height: '20px', borderRadius: '50%', background: statusColors[status], alignItems: 'center', color: '#fff', margin: '0 auto' }}>
+                    {counts[status]}
+                  </div>
+
                 </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -268,22 +291,84 @@ const statusColors = {
             <div className='col'>{row.status}</div>
             <div className='col'>
               {row.reporter && (
-                <button className='btn btn-warning btn-sm me-2' onClick={() => alert(`ดูรายละเอียด ID: ${row.id}`)}><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list-stars" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5"/>
-                <path d="M2.242 2.194a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.28.28 0 0 0-.094.3l.173.569c.078.256-.213.462-.423.3l-.417-.324a.27.27 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.28.28 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.27.27 0 0 0 .259-.194zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.28.28 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.27.27 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.28.28 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.27.27 0 0 0 .259-.194zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.28.28 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.27.27 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.28.28 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.27.27 0 0 0 .259-.194z"/>
-              </svg></button>
+                <button className='btn btn-sm me-2' style={{backgroundColor:'#E6A152'}} onClick={() => handleOpenDetail(row)}><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list-stars" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5"/> <path d="M2.242 2.194a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.28.28 0 0 0-.094.3l.173.569c.078.256-.213.462-.423.3l-.417-.324a.27.27 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.28.28 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.27.27 0 0 0 .259-.194zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.28.28 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.27.27 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.28.28 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.27.27 0 0 0 .259-.194zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.28.28 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.27.27 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.28.28 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.27.27 0 0 0 .259-.194z"/> </svg></button>
+                  
               )}
-              {row.reporter && (
-                <button className='btn btn-danger btn-sm' onClick={() => alert(`แก้ไข ID: ${row.id}`)}><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-              </svg></button>
-              )}
+              <button className='btn btn-danger btn-sm me-2' onClick={() => navigate('/pages/job/EditJob')}>Edit </button>
             </div>
           </div>
           {index !== msg.length - 1 && <hr className="m-0" />}
         </div>
       ))}
+
+      {showModal && selectedRow && (
+        <div
+          className="modal fade show"
+          style={{
+            display: 'block',
+            background: 'rgba(0,0,0,0.5)',
+          }}
+        >
+          <div className="modal-dialog modal-lg">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">รายละเอียดงานซ่อม</h5>
+                <button type="button" className="btn-close" onClick={handleCloseDetail}></button>
+              </div>
+
+              <div className="modal-body ms-3">
+                <div className='d-flex'>
+                  <div>
+                    <p><b>เลขที่แจ้งซ่อม:</b></p>
+                    <p><b>วันที่แจ้งซ่อม:</b></p>
+                    <p><b>ชื่อผู้แจ้ง:</b></p>
+                    <p><b>หน่วยงาน / แผนก:</b></p>
+                    <p><b>ประเภทงานซ่อม:</b></p>
+                    <p><b>ประเภทปัญหา:</b> </p>
+                    <p><b>ปัญหางานซ่อม:</b></p>
+                    <p><b>วิธีแก้:</b></p>
+                    <p><b>ผู้ดำเนินการ:</b></p>
+                    <p><b>วันที่ดำเนินการ:</b></p>
+                    <p><b>วันที่สำเร็จ:</b></p>
+                    <p><b>สถานะ:</b></p>
+                  </div>
+
+                  <div className='ms-5'>
+                    <p>-</p>
+                    <p>{selectedRow.date}</p>
+                    <p>-</p>
+                    <p>-</p>
+                    <p>{selectedRow.type}</p>
+                    <p>-</p>
+                    <p>{selectedRow.issue}</p>
+                    <p>{selectedRow.solution || '-'}</p>
+                    <p>{selectedRow.operator || '-'}</p>
+                    <p>-</p>
+                    <p>-</p>
+                    <p>{selectedRow.status}</p>
+                  </div>
+
+                </div>
+
+
+                {/* ส่วนไฟล์แนบ */}
+                <p><b>ไฟล์แนบ:</b></p>
+                {selectedRow.file ? (
+                  <div>
+                    <img src={selectedRow.file} alt="แนบไฟล์" style={{ maxWidth: '200px', border: '1px solid #ccc' }} />
+                  </div>
+                ) : (
+                  <p style={{ color: 'red' }}>ไม่มีไฟล์แนบ</p>
+                )}
+              </div>
+              <div className="modal-footer">
+                <button className="btn btn-secondary" onClick={handleCloseDetail}>ปิด</button>
+                <button className="btn btn-success" onClick={() => window.print()}>พิมพ์</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
 
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+// ตรงนี้ไว้กำหนดลิ้งค์แต่ละหน้า ว่าหน้านี้ๆให้เชื่อมกับหน้าไหน
 import App from './App';
 import ReportUser from './ReportUser';
 import ITReport from './pages/device/ITReport';
@@ -21,7 +21,7 @@ import UserList from './pages/report/UserList';
 import CreateJob from './pages/job/CreateJob';
 import EditJob from './pages/job/EditJob';
 import CreateDevice from './pages/device/CreateDevice';
-// import EditJob from './pages/job/EditJob';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -46,7 +46,6 @@ root.render(
       <Route path="/pages/job/CreateJob" element={<CreateJob />} />
       <Route path="/pages/job/EditJob" element={<EditJob />} />
       <Route path="/pages/device/CreateDevice" element={<CreateDevice />} />
-      {/* <Route path="/pages/job/Edit" element={<EditJob />} /> */}
     </Routes>
   </BrowserRouter>
 );

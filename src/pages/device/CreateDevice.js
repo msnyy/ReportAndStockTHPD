@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../header';
+//3อันบนใส่ทุกหน้า
 
-
+//เอาบรรทัดชื่อใน function ไปเชื่อมกับหน้า index.js
 function CreateDevice() {
     const [msg, setMsg] = useState('');
     const navigate = useNavigate();

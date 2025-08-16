@@ -60,7 +60,7 @@ function EditJob() {
 
           <div className='flex-fill mx-4'>
             <div className='d-flex alignItems-center' style={{ backgroundColor: '#8B6D6D8A', height: '40px' }}>
-              <p className='mt-2 ms-3'>ข้อมูลผู้แจ้ง</p>
+              <p className='mt-2 ms-3'>ผู้ดำเนินการ</p>
             </div>
 
             <div className='d-flex justify-content-around mt-4'>
@@ -113,7 +113,7 @@ function EditJob() {
         <div className='d-flex justify-content-around'>
           <div className='flex-fill'>
             <div className='d-flex alignItems-center mt-4' style={{ backgroundColor: '#8B6D6D8A', height: '40px' }}>
-              <p className='mt-2 ms-3'>ข้อมูลผู้แจ้ง</p>
+              <p className='mt-2 ms-3'>ข้อมูลปัญหา</p>
             </div>
             <div className='d-flex justify-content-around mt-4'>
               <label className="form-label" style={{ width: '20%' }}>ประเภทงานซ่อม</label>
@@ -173,10 +173,10 @@ function EditJob() {
 
           </div>
 
-          <div className='flex-fill mx-4 mt-4'  style={{width:'28%'}}>
+          <div className='flex-fill mx-4 mt-4'  style={{width:'23%'}}>
             <div>
               <div className='d-flex alignItems-center' style={{ backgroundColor: '#8B6D6D8A', height: '40px' }}>
-                <p className='mt-2 ms-3'>ข้อมูลผู้แจ้ง</p>
+                <p className='mt-2 ms-3'>ผลการแก้ไข</p>
               </div>
 
               <div className='d-flex justify-content-around mt-4'>
@@ -202,25 +202,22 @@ function EditJob() {
                     placeholder="กรอกรายละเอียดปัญหา/งานซ่อม..."
                   ></textarea>
                 </div>
-                <div className='d-flex mt-3'>
-                  <label className="form-label" style={{ width: '15%' }}>แทรกไฟล์</label>
-                  <input className="form-control" type="file" name="image" onChange={handleChange} />
-                </div>
+                
 
               </div>
             </div>
 
             <div className='flex-fill mt-4'>
               <div className='d-flex alignItems-center mt-4' style={{ backgroundColor: '#8B6D6D8A', height: '40px' }}>
-                <p className='mt-2 ms-3'>ข้อมูลผู้แจ้ง</p>
+                <p className='mt-2 ms-3'>สถานะ</p>
               </div>
               <div className='d-flex mt-4'>
                 <label className="form-label" style={{ width: '10%' }}>สถานะ</label>
                 <div className='flex-fill'>
                   <select className="form-select" name="type_repair">
                     <option value="">สถานะ</option>
-                    <option value="processing">วันที่ดำเนินการ</option>
-                    <option value="completed">วันที่สำเร็จ</option>
+                    <option value=""></option>
+                    <option value=""></option>
                   </select>
                 </div>
               </div>
